@@ -1,0 +1,53 @@
+@font-face {
+  font-family: "frock thin";
+  src: url("../fonts/FROCKTHIN-P7XZV.TTF");
+}
+@font-face {
+  font-family: "made bon voyage";
+  src: url("../fonts/MADEBONVOYAGE\ 400.OTF");
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+#main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #222;
+}
+h1 {
+  font-size: 140px;
+  font-family: "made bon voyage";
+  color: rgb(0, 122, 205);
+  text-shadow: 1px 1px 2px white;
+}
+a {
+  background: radial-gradient(rgb(0, 122, 205), rgb(0, 122, 205), white);
+  color: white;
+  font-family: "Frock thin";
+  font-size: 30px;
+  padding: 10px 50px;
+  border: none;
+  margin-top: 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+}
+a:hover {
+  background: radial-gradient(white, rgb(0, 122, 205), rgb(0, 122, 205));
+  color: #222;
+  transition: all 0.5s;
+  cursor: pointer;
+  font-weight: 800;
+}

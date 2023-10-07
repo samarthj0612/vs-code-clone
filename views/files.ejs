@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Samarth Jain">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VS Code</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+
+  <body>
+    <div id="main">
+      <div id="nav">
+        <div id="options">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/2048px-Visual_Studio_Code_1.35_icon.svg.png" alt="" id="vslogo" />
+          <h5 id="filecontroller">File</h5>
+          <h5 id="editcontroller">Edit</h5>
+          <h5>Selection</h5>
+          <h5>View</h5>
+          <h5>Go</h5>
+          <h5>Run</h5>
+          <h5 id="terminalcontroller">Terminal</h5>
+          <h5>Help</h5>
+        </div>
+
+        <h4><%= folderpath %></h4>
+
+        <div id="icons">
+          <i class="ri-side-bar-fill"></i>
+          <i class="ri-layout-bottom-line"></i>
+          <i class="ri-layout-right-line"></i>
+          <i class="ri-layout-2-line"></i>
+          <div id="minimize"></div>
+          <i class="ri-discuss-line"></i>
+          <a id="exitvscode" style="text-decoration: none" href="/">
+            <i class="ri-close-line"></i>
+          </a>
+        </div>
+      </div>
+
+      <div id="filedropdown">
+        <span>New Text File</span>
+        <span>New File...</span>
+        <span>New Window</span>
+        <hr />
+        <span>Open File...</span>
+        <span>Open Folder...</span>
+        <span>Open Workspace from File...</span>
+        <span>Open Recent</span>
+        <hr />
+        <span>Add Folder to Workspace</span>
+        <span>Save Workspace As...</span>
+        <span>Duplicate Workspace</span>
+        <hr />
+        <span>Save</span>
+        <span>Save As...</span>
+        <span>Save All</span>
+        <hr />
+        <span>Auto Save</span>
+        <span>Preferences</span>
+        <hr />
+        <span>Revert File</span>
+        <span>Close Editor</span>
+        <span>Close Folder</span>
+        <span>Close Window</span>
+        <hr />
+        <span>Exit</span>
+      </div>
+
+      <div id="editdropdown">
+        <span>Undo</span>
+        <span>Redo</span>
+        <hr />
+        <span>Cut</span>
+        <span>Copy</span>
+        <span>Paste</span>
+        <hr />
+        <span>Find</span>
+        <span>Replace</span>
+        <hr />
+        <span>Find in files</span>
+        <span>Replace in files</span>
+        <hr />
+        <span>Toggle line comment</span>
+        <span>Toggle line comment</span>
+        <span>Emment : expand abbreviation</span>
+      </div>
+
+      <div id="terminaldropdown">
+        <span>New Terminal</span>
+        <span>Split Terminal</span>
+        <hr />
+        <span>Run Task...</span>
+        <span>Run Build Task...</span>
+        <span>Run Active File</span>
+        <span>Run Selected Text</span>
+        <hr />
+        <span>Show Running Tasks...</span>
+        <hr />
+        <span>Restart Running Tasks...</span>
+        <span>Terminate Tasks</span>
+        <hr />
+        <span>Toggle line comment</span>
+        <span>Configure Tasks...</span>
+        <span>Configure Default Build Task...</span>
+      </div>
+
+      <div id="content">
+        <div id="sidebar">
+          <div>
+            <i id="leftcontroller" class="ri-file-copy-line"></i>
+            <i class="ri-search-line"></i>
+            <i class="ri-equalizer-line"></i>
+            <i class="ri-bug-line"></i>
+            <i class="ri-tv-2-line"></i>
+            <i class="ri-layout-grid-line"></i>
+            <i class="ri-github-fill"></i>
+            <i class="ri-share-forward-line"></i>
+          </div>
+
+          <div>
+            <i class="ri-user-line"></i>
+            <i class="ri-settings-5-line"></i>
+          </div>
+        </div>
+
+        <div id="left">
+          <div id="row">
+            <i class="ri-arrow-down-s-line"></i>
+            <%= foldername %>
+            <div id="icons1">
+              <i id="addfile" class="ri-file-add-line"></i>
+              <i id="addfolder" class="ri-folder-add-line"></i>
+              <a href="/VsCode/files" style="text-decoration:none;"><i class="ri-restart-line"></i></a>
+              <i class="ri-folders-line"></i>
+            </div>
+          </div>
+
+          <div id="files">
+            <form id="filecreator" action="/newfile">
+              <input name="filename" type="text" placeholder="Enter the file name" />
+            </form>
+
+            <form id="foldercreator" action="/newfolder">
+              <input name="foldername" type="text" placeholder="Enter the folder name" />
+            </form>
+
+            <% files.forEach(function(file){ %>
+              <div id="file">
+                <a href="/VsCode/files/<%= file %>">
+                  <% if(file.split('.').length > 1){ %>
+                    <% if(file.split('.').pop() == 'html'){ %>
+                      <i class="ri-html5-line"></i>
+                    <% } else if(file.split('.').pop() == 'css'){ %>
+                      <i class="ri-css3-line"></i>
+                    <% } else{ %>
+                      <i class="ri-file-line"></i>
+                    <% } %>
+                  <% } else { %>
+                    <i class="ri-folder-3-line"></i>
+                  <% } %>
+                  <%= file %>
+                </a>
+                <a href="/deletefile/<%= file %>" ><i class="ri-delete-bin-line"></i ></a>
+              </div>
+            <% }) %>
+          </div>
+
+          <div id="outline">
+            <i class="ri-arrow-right-s-line"></i>
+            Outline
+          </div>
+
+          <div id="Timeline">
+            <i class="ri-arrow-right-s-line"></i>
+            Timeline
+          </div>
+        </div>
+
+        <div id="right">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/2048px-Visual_Studio_Code_1.35_icon.svg.png" alt="" id="bglogo" />
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js" integrity="sha512-VEBjfxWUOyzl0bAwh4gdLEaQyDYPvLrZql3pw1ifgb6fhEvZl9iDDehwHZ+dsMzA0Jfww8Xt7COSZuJ/slxc4Q==" crossorigin="anonymous" referrerpolicy="no-referrer" ></script>
+    <script src="/js/script.js"></script>
+  </body>
+</html>

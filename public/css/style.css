@@ -1,0 +1,295 @@
+@font-face {
+  font-family: "gilroy";
+  src: url("../fonts/GILROY-REGULAR.OTF");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+  font-family: "gilroy";
+  font-weight: 300;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+#main {
+  height: 100vh;
+  width: 100%;
+}
+#nav {
+  background-color: rgb(60, 60, 60);
+  height: 5%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 999;
+  padding: 0px 15px;
+}
+#options {
+  height: 100%;
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#options img {
+  height: 70%;
+  margin-right: 10px;
+}
+#filedropdown {
+  position: absolute;
+  top: -75%;
+  left: 4%;
+  display: flex;
+  flex-direction: column;
+  z-index: 998;
+  border: 0.1px solid white;
+  padding: 10px 30px;
+  background-color: rgb(60, 60, 60);
+  border-radius: 2px;
+}
+#filedropdown span {
+  padding: 4px 10px;
+}
+#filedropdown span:hover {
+  background-color: rgb(112, 112, 112);
+  cursor: pointer;
+}
+#editdropdown {
+  position: absolute;
+  top: -45%;
+  left: 6.5%;
+  display: flex;
+  flex-direction: column;
+  z-index: 998;
+  border: 0.1px solid white;
+  padding: 10px 30px;
+  background-color: rgb(60, 60, 60);
+  border-radius: 2px;
+}
+#editdropdown span {
+  padding: 4px 10px;
+}
+#editdropdown span:hover {
+  background-color: rgb(112, 112, 112);
+  cursor: pointer;
+}
+#terminaldropdown {
+  position: absolute;
+  top: -45%;
+  left: 23.5%;
+  display: flex;
+  flex-direction: column;
+  z-index: 998;
+  border: 0.1px solid white;
+  padding: 10px 30px;
+  background-color: rgb(60, 60, 60);
+  border-radius: 2px;
+}
+#terminaldropdown span {
+  padding: 4px 10px;
+}
+#terminaldropdown span:hover {
+  background-color: rgb(112, 112, 112);
+  cursor: pointer;
+}
+#options h5 {
+  padding: 5px 10px;
+}
+#options h5:hover {
+  background-color: rgba(255, 255, 255, 0.242);
+  cursor: pointer;
+}
+#icons {
+  height: 100%;
+  width: 17%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#icons i {
+  padding: 10px;
+}
+#icons i:hover {
+  background-color: rgba(255, 255, 255, 0.242);
+  cursor: pointer;
+}
+#icons #minimize {
+  width: 13px;
+  border: 1px solid white;
+  background-color: white;
+  margin: 10px;
+}
+#content {
+  height: 95%;
+  width: 100%;
+  display: flex;
+  background-color: rgb(30, 30, 30);
+}
+#sidebar {
+  background-color: rgb(51, 51, 51);
+  height: 100%;
+  width: 4%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  z-index: 100;
+}
+#sidebar div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#sidebar div i {
+  font-size: 30px;
+  padding: 10px;
+}
+#sidebar div i:hover {
+  background-color: rgba(255, 255, 255, 0.242);
+  cursor: pointer;
+}
+#leftcontroller {
+  background-color: rgba(255, 255, 255, 0.242);
+  transition: all 0.3s;
+}
+#left {
+  background-color: rgb(37, 37, 39);
+  height: 100%;
+  width: 20%;
+  padding: 10px;
+  position: relative;
+  z-index: 10;
+}
+#row {
+  height: 5%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.265);
+}
+#left i {
+  font-size: 18px;
+  padding: 5px;
+}
+#left i:hover {
+  background-color: rgba(255, 255, 255, 0.121);
+  cursor: pointer;
+}
+#files {
+  height: 88%;
+  width: 100%;
+  padding-top: 10px;
+  font-size: 17px;
+}
+#files #file {
+  padding: 5px 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#filecreator,
+#foldercreator {
+  display: none;
+  padding: 5px 35px;
+}
+#filecreator input,
+#foldercreator input {
+  color: black;
+}
+#file a,
+#file a i {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.514);
+}
+#file a:hover,
+#file a i:hover {
+  color: white;
+  transition: all 0.3s;
+}
+#outline,
+#Timeline {
+  height: 4%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.265);
+}
+#right {
+  background-color: rgb(30, 30, 30);
+  height: 100%;
+  width: 76%;
+  position: relative;
+  padding: 10px;
+}
+#bglogo {
+  height: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.2;
+  z-index: 1;
+}
+#right #tabbar {
+  /* border: 1px solid white; */
+  width: 100%;
+  height: 5%;
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.265);
+}
+#right #tabbar #tab {
+  height: 100%;
+  padding: 0px 20px;
+  display: flex;
+  align-items: center;
+  /* border: 1px solid red; */
+  background-color: rgb(74, 73, 73);
+}
+#right #tabbar #tab i {
+  margin-left: 5px;
+  padding: 2px;
+}
+#right #tabbar #tab i:hover {
+  background-color: rgba(255, 255, 255, 0.242);
+  cursor: pointer;
+  border-radius: 5px;
+}
+#right #filecontent {
+  position: relative;
+  width: 100%;
+  height: 95%;
+  padding: 20px;
+  z-index: 40;
+}
+#right #filecontent textarea {
+  background-color: transparent;
+  width: inherit;
+  height: inherit;
+  outline: none;
+  border: none;
+  resize: none;
+}
+#right #filecontent input[type="submit"] {
+  background-color: rgba(255, 255, 255, 0.139);
+  color: rgba(255, 255, 255, 0.537);
+  padding: 5px 25px;
+  position: absolute;
+  right: 4%;
+  border: none;
+  border-radius: 5px;
+}
+#right #filecontent input[type="submit"]:hover {
+  background-color: #039eff;
+  color: white;
+  cursor: pointer;
+}
